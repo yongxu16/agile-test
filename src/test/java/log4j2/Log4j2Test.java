@@ -11,6 +11,7 @@ public class Log4j2Test {
 	@Test
 	public void testLog() {
 		LOG.info("--- {} --- {} ", "java", "world");
+		LOG.info("第{}此移动:\t圆盘从{}棒移动到{}棒\n", 1,'A',"AB");
 	}
 	
 	@Test
