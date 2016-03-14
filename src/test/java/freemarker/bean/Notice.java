@@ -1,4 +1,4 @@
-package freemarkertest.bean;
+package freemarker.bean;
 
 public class Notice {
 	private String recipient;

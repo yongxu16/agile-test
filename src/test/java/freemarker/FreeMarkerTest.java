@@ -1,4 +1,4 @@
-package freemarkertest;
+package freemarker;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -9,7 +9,7 @@ import org.agle4j.framework.utils.FreeMarkerUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import freemarkertest.bean.Notice;
+import freemarker.bean.Notice;
 
 public class FreeMarkerTest {
 
