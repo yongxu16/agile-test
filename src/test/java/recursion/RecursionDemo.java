@@ -27,11 +27,14 @@ public class RecursionDemo {
 	 */
 	private int fibonacci(int n) {
 		if (n == 1 || n == 2) {
+//			System.out.println(n +": " + 1);
 			return 1 ;
 		} else {
 			int t1 = fibonacci(n - 1) ;
 			int t2 = fibonacci(n - 2) ;
-			return t1 + t2 ;
+			int sum = t1 + t2 ;
+			System.out.println(n + ": " + sum);
+			return sum ;
 		}
 	}
 	
@@ -43,7 +46,7 @@ public class RecursionDemo {
 	 */
 	@Test
 	public void testDemo02() {
-		double n = 100 ;
+		double n = 5 ;
 		LOGGER.debug(fact(n));
 	}
 	
@@ -56,14 +59,15 @@ public class RecursionDemo {
 		if (n <= 1) {
 			return 1 ;
 		} else {
-			return n * fact(n-1) ;
+			System.out.println(fact(n-1));
+			return n + fact(n-1) ;
 		}
 	}
 	
 	/**
 	 * 汉诺塔
 	 * 1) 将A棒上的n-1个圆盘移动到B棒上
-	 * 2) A棒上的一个圆盘移动到C棒上
+	 * 2) A棒上的一个圆盘移动到C棒上(最大)
 	 * 3) 将B棒上n-1个圆盘移动到C棒上
 	 */
 	private static long count;
@@ -78,7 +82,7 @@ public class RecursionDemo {
 	/**
 	 * 汉诺塔
 	 * 1) 将A棒上的n-1个圆盘移动到B棒上
-	 * 2) A棒上的一个圆盘移动到C棒上
+	 * 2)A棒上的一个圆盘移动到C棒上(最大)
 	 * 3) 将B棒上n-1个圆盘移动到C棒上
 	 * @param n 圆盘数量
 	 * @param a A棒符号
@@ -90,9 +94,9 @@ public class RecursionDemo {
 		if (n == 1) {
 			LOGGER.debug(format, ++count, a, c);
 		} else {
-			hanoi(n - 1, a, c, b);	// 步骤
-			LOGGER.debug(format, ++count, a, c);
-			hanoi(n - 1, b, a, c);	// 步骤
+			hanoi(n - 1, a, c, b);	// 步骤  将A棒上的n-1个圆盘移动到B棒上
+			LOGGER.debug(format, ++count, a, c);	// A棒上的一个圆盘移动到C棒上(最大)
+			hanoi(n - 1, b, a, c);	// 步骤 将B棒上n-1个圆盘移动到C棒上
 		}
 	}
 	
